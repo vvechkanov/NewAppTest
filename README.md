@@ -78,4 +78,5 @@ docker run -p 3001:3001 new-app-api
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is distributed under the terms of the [GNU General Public License v3](LICENSE).
