@@ -73,3 +73,7 @@ To build and run the API:
 docker build -t new-app-api apps/api
 docker run -p 3000:3000 new-app-api
 ```
+
+## License
+
+This project is distributed under the terms of the [GNU General Public License v3](LICENSE).
