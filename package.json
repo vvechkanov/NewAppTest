@@ -1,0 +1,18 @@
+{
+  "name": "new-app-test",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start"
+  },
+  "devDependencies": {
+    "turbo": "^1.10.12",
+    "@types/node": "^20.11.21"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
