@@ -13,8 +13,10 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 - `pnpm dev` – run `dev` scripts in all packages with Turbo
 - `pnpm build` – build all packages
 - `pnpm start` – start compiled applications
+- `pnpm lint` – run ESLint across the repo
 
 Environment variables are loaded from the root `.env` file in all packages.
+Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
 
 ## Минимальные требования к серверу
 
@@ -27,9 +29,9 @@ Environment variables are loaded from the root `.env` file in all packages.
 
 1. Установите Node.js 18 и `pnpm` (можно через `corepack enable`).
 2. Клонируйте репозиторий и перейдите в каталог проекта.
-3. Выполните `./scripts/init.sh` для установки зависимостей и сборки.
+3. Выполните `./scripts/init.sh` для установки зависимостей, одобрения скриптов, генерации Prisma client и применения миграций.
 4. Запустите сервер командой `./scripts/start.sh`.
-5. Проверить работу можно запросом `GET /ping` на порт `3000`.
+5. Проверить работу можно запросом `GET /ping` на порт `3001`.
 6. Остановить приложения можно через `./scripts/stop.sh`.
 
 Все скрипты находятся в каталоге `scripts`.
@@ -71,5 +73,9 @@ To build and run the API:
 
 ```bash
 docker build -t new-app-api apps/api
-docker run -p 3000:3000 new-app-api
+docker run -p 3001:3001 new-app-api
 ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

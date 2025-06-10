@@ -11,5 +11,5 @@ model Game {
   id      String   @id @default(cuid())
   name    String
   gmName  String
-  players String[]
+  players Json
 }

@@ -5,11 +5,19 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "turbo run start"
+    "start": "turbo run start",
+    "postinstall": "pnpm --filter @new-app/api exec prisma generate || true",
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
     "turbo": "^1.10.12",
-    "@types/node": "^20.11.21"
+    "@types/node": "^20.11.21",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0"
+  },
+  "engines": {
+    "node": "^18"
   },
   "workspaces": [
     "apps/*",
