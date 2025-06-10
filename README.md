@@ -14,6 +14,7 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 - `pnpm build` – build all packages
 - `pnpm start` – start compiled applications
 - `pnpm lint` – run ESLint across the repo
+- `pnpm test` – run unit tests using Vitest
 
 Environment variables are loaded from the root `.env` file in all packages.
 Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
@@ -75,6 +76,12 @@ To build and run the API:
 docker build -t new-app-api apps/api
 docker run -p 3001:3001 new-app-api
 ```
+
+## CI
+
+All pushes and pull requests trigger GitHub Actions defined in
+`.github/workflows/ci.yml`. The workflow installs dependencies,
+runs `pnpm lint`, `pnpm test` and `pnpm build`.
 
 ## License
 
