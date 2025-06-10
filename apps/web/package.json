@@ -1,0 +1,20 @@
+{
+  "name": "@new-app/web",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "@new-app/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "@types/express": "^4.17.21"
+  }
+}
