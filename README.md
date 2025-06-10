@@ -14,6 +14,7 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 - `pnpm build` – build all packages
 - `pnpm start` – start compiled applications
 - `pnpm lint` – run ESLint across the repo
+- `pnpm test` – run unit tests using Vitest
 
 Environment variables are loaded from the root `.env` file in all packages.
 Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
@@ -85,6 +86,12 @@ PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma 
 ```
 
 You may also need to configure `no_proxy` or a mirror for `binaries.prisma.sh`.
+
+## CI
+
+All pushes and pull requests trigger GitHub Actions defined in
+`.github/workflows/ci.yml`. The workflow installs dependencies,
+runs `pnpm lint`, `pnpm test` and `pnpm build`.
 
 ## License
 
