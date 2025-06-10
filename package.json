@@ -7,14 +7,16 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "postinstall": "pnpm --filter @new-app/api exec prisma generate || true",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "vitest run"
   },
   "devDependencies": {
     "turbo": "^1.10.12",
     "@types/node": "^20.11.21",
     "eslint": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0"
+    "@typescript-eslint/parser": "^7.8.0",
+    "vitest": "^1.5.1"
   },
   "engines": {
     "node": "^18"
