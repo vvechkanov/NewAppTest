@@ -15,3 +15,21 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 - `pnpm start` – start compiled applications
 
 Environment variables are loaded from the root `.env` file in all packages.
+
+## Минимальные требования к серверу
+
+- 1 CPU
+- 512 МБ RAM
+- 2 ГБ свободного диска
+- Ubuntu Server 22.04 LTS
+
+## Подготовка и запуск
+
+1. Установите Node.js 18 и `pnpm` (можно через `corepack enable`).
+2. Клонируйте репозиторий и перейдите в каталог проекта.
+3. Выполните `./scripts/init.sh` для установки зависимостей и сборки.
+4. Запустите сервер командой `./scripts/start.sh`.
+5. Проверить работу можно запросом `GET /ping` на порт `3000`.
+6. Остановить приложения можно через `./scripts/stop.sh`.
+
+Все скрипты находятся в каталоге `scripts`.
