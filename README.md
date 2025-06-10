@@ -34,6 +34,13 @@ Environment variables are loaded from the root `.env` file in all packages.
 
 Все скрипты находятся в каталоге `scripts`.
 
+Для запуска инструмента **OpenAI Local Shell** выполните:
+
+```bash
+./scripts/local-shell.sh
+```
+Это позволит использовать возможности ChatGPT для работы в локальной оболочке.
+
 Перед первым запуском выполните миграцию базы данных:
 
 ```bash
