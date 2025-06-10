@@ -5,8 +5,10 @@ import { Game } from '@new-app/shared';
 export default function GamesPage() {
   const [games, setGames] = useState<Game[]>([]);
 
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+
   useEffect(() => {
-    fetch('http://localhost:3000/games')
+    fetch(`${apiUrl}/games`)
       .then(res => res.json())
       .then(setGames)
       .catch(console.error);

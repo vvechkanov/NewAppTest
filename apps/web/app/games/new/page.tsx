@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 
 export default function NewGamePage() {
   const router = useRouter();
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
   const [name, setName] = useState('');
   const [gmName, setGmName] = useState('');
   const [players, setPlayers] = useState('');
@@ -18,7 +19,7 @@ export default function NewGamePage() {
         gmName,
         players: players.split(',').map(p => p.trim()).filter(Boolean)
       });
-      const res = await fetch('http://localhost:3000/games', {
+      const res = await fetch(`${apiUrl}/games`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
