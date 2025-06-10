@@ -27,7 +27,7 @@ Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
 
 ## Подготовка и запуск
 
-1. Установите Node.js 18 и `pnpm` (можно через `corepack enable`).
+1. Установите Node.js 20 и `pnpm` (можно через `corepack enable`).
 2. Клонируйте репозиторий и перейдите в каталог проекта.
 3. Выполните `./scripts/init.sh` для установки зависимостей, одобрения скриптов, генерации Prisma client и применения миграций.
 4. Запустите сервер командой `./scripts/start.sh`.
@@ -75,6 +75,16 @@ To build and run the API:
 docker build -t new-app-api apps/api
 docker run -p 3001:3001 new-app-api
 ```
+
+## Troubleshooting
+
+If `prisma generate` fails with a `403 Forbidden` error while downloading engines (common in restricted networks), add `PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1` and run:
+
+```bash
+PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma generate --skip-download
+```
+
+You may also need to configure `no_proxy` or a mirror for `binaries.prisma.sh`.
 
 ## License
 

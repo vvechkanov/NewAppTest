@@ -6,7 +6,7 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
-    "postinstall": "pnpm --filter @new-app/api exec prisma generate || true",
+    "postinstall": "PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma generate --skip-download || true",
     "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
@@ -17,7 +17,7 @@
     "@typescript-eslint/parser": "^7.8.0"
   },
   "engines": {
-    "node": "^18"
+    "node": "^20"
   },
   "workspaces": [
     "apps/*",
