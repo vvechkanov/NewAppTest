@@ -12,6 +12,10 @@ app.get('/health', (_: Request, res: Response) => {
   res.json({ status: 'ok' });
 });
 
+app.get('/ping', (_: Request, res: Response) => {
+  res.send('pong');
+});
+
 app.listen(port, () => {
   console.log(`API listening on port ${port}`);
 });
