@@ -86,6 +86,7 @@ PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma 
 ```
 
 You may also need to configure `no_proxy` or a mirror for `binaries.prisma.sh`.
+
 ## CI
 
 All pushes and pull requests trigger GitHub Actions defined in
