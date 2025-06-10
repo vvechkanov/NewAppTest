@@ -1,19 +1,17 @@
 import { z } from 'zod';
 
-export const PlayerSchema = z.object({
-  id: z.string(),
-  name: z.string()
-});
-export type Player = z.infer<typeof PlayerSchema>;
-
 export const GameSchema = z.object({
   id: z.string(),
-  players: z.array(PlayerSchema)
+  name: z.string(),
+  gmName: z.string(),
+  players: z.array(z.string())
 });
 export type Game = z.infer<typeof GameSchema>;
 
-export const CreateGameInputSchema = z.object({
-  playerNames: z.array(z.string())
+export const CreateGameSchema = z.object({
+  name: z.string(),
+  gmName: z.string(),
+  players: z.array(z.string())
 });
-export type CreateGameInput = z.infer<typeof CreateGameInputSchema>;
+export type CreateGame = z.infer<typeof CreateGameSchema>;
 
