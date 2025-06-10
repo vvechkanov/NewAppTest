@@ -4,7 +4,7 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 
 ## Structure
 
-- `apps/web` – minimal Express based frontend
+- `apps/web` – Next.js frontend
 - `apps/api` – Express API server
 - `packages/shared` – shared TypeScript types and Zod schemas
 
@@ -33,3 +33,36 @@ Environment variables are loaded from the root `.env` file in all packages.
 6. Остановить приложения можно через `./scripts/stop.sh`.
 
 Все скрипты находятся в каталоге `scripts`.
+
+Перед первым запуском выполните миграцию базы данных:
+
+```bash
+pnpm prisma migrate dev --name init
+```
+
+## Web pages
+
+- `/games` – список игр
+- `/games/new` – форма создания игры
+
+## API routes
+
+- `GET /games` – return list of games
+- `POST /games` – create a new game. Body example:
+
+```json
+{
+  "name": "D&D",
+  "gmName": "Alice",
+  "players": ["Bob", "Charlie"]
+}
+```
+
+### Docker
+
+To build and run the API:
+
+```bash
+docker build -t new-app-api apps/api
+docker run -p 3000:3000 new-app-api
+```
