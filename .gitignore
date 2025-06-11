@@ -4,3 +4,4 @@ node_modules
 pnpm-lock.yaml
 .turbo
 *.tsbuildinfo
+node-compile-cache/

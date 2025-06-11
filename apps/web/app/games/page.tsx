@@ -17,7 +17,6 @@ export default function GamesPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Games</h1>
-      <a href="/games/new" className="underline text-blue-600">Create new game</a>
       <ul className="mt-4 space-y-2">
         {games.map(g => (
           <li key={g.id} className="p-2 border rounded">

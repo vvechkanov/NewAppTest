@@ -18,6 +18,8 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 
 Environment variables are loaded from the root `.env` file in all packages.
 Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
+Provide Discord OAuth credentials in `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET` and set `DISCORD_CALLBACK_URL`.
+Use `SESSION_SECRET` to configure cookie sessions.
 
 ## Минимальные требования к серверу
 
@@ -58,15 +60,18 @@ pnpm prisma migrate dev --name init
 ## API routes
 
 - `GET /games` – return list of games
-- `POST /games` – create a new game. Body example:
+- `POST /games` – create a new game (GM only). Body example:
 
 ```json
 {
   "name": "D&D",
-  "gmName": "Alice",
   "players": ["Bob", "Charlie"]
 }
 ```
+
+- `GET /me` – current authenticated user
+- `GET /auth/discord` – start Discord OAuth flow
+- `GET /auth/discord/callback` – OAuth callback
 
 ### Docker
 
