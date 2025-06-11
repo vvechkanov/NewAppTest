@@ -7,7 +7,6 @@ export default function NewGamePage() {
   const router = useRouter();
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
   const [name, setName] = useState('');
-  const [gmName, setGmName] = useState('');
   const [players, setPlayers] = useState('');
   const [error, setError] = useState('');
 
@@ -16,7 +15,6 @@ export default function NewGamePage() {
     try {
       const data = CreateGameSchema.parse({
         name,
-        gmName,
         players: players.split(',').map(p => p.trim()).filter(Boolean)
       });
       const res = await fetch(`${apiUrl}/games`, {
@@ -38,10 +36,6 @@ export default function NewGamePage() {
       <div>
         <label className="block">Name</label>
         <input className="border p-2 w-full" value={name} onChange={e => setName(e.target.value)} />
-      </div>
-      <div>
-        <label className="block">GM Name</label>
-        <input className="border p-2 w-full" value={gmName} onChange={e => setGmName(e.target.value)} />
       </div>
       <div>
         <label className="block">Players (comma separated)</label>

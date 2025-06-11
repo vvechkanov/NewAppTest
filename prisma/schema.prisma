@@ -8,8 +8,30 @@ generator client {
 }
 
 model Game {
-  id      String   @id @default(cuid())
-  name    String
-  gmName  String
-  players Json
+  id        String   @id @default(cuid())
+  name      String
+  gmId      String?
+  gm        User?    @relation(fields: [gmId], references: [id])
+  gmName    String
+  players   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum Role {
+  PLAYER
+  GM
+}
+
+model User {
+  id        String   @id @default(cuid())
+  discordId String   @unique
+  name      String
+  avatarUrl String
+  email     String?
+  role      Role     @default(PLAYER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  games Game[]
 }

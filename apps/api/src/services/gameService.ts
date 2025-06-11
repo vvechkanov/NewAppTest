@@ -5,7 +5,7 @@ export async function listGames() {
   return prisma.game.findMany();
 }
 
-export async function createGame(data: CreateGame) {
+export async function createGame(data: CreateGame & { gmId: string; gmName: string }) {
   return prisma.game.create({ data });
 }
 
