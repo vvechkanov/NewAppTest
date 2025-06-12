@@ -17,6 +17,8 @@ This repository demonstrates a simple monorepo using **pnpm workspaces** and **T
 - `pnpm test` – run unit tests using Vitest
 
 Environment variables are loaded from the root `.env` file in all packages.
+Copy `.env.example` to `.env` before running `./scripts/init.sh` and fill in the values.
+Set `DATABASE_URL` for Prisma (the default `file:./dev.db` works for SQLite).
 Set `NEXT_PUBLIC_API_URL` to the API base URL (default `http://localhost:3001`).
 Provide Discord OAuth credentials in `DISCORD_CLIENT_ID`, `DISCORD_CLIENT_SECRET` and set `DISCORD_CALLBACK_URL`.
 Use `SESSION_SECRET` to configure cookie sessions.
