@@ -1,12 +1,11 @@
-name: CI
+name: Test
 
 on:
   push:
-    branches: [ main ]
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,6 +20,4 @@ jobs:
       - run: pnpm --version
         name: Verify pnpm installation
       - run: pnpm install --no-frozen-lockfile
-      - run: pnpm lint
       - run: pnpm test
-      - run: pnpm build

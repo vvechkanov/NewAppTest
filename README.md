@@ -96,7 +96,10 @@ You may also need to configure `no_proxy` or a mirror for `binaries.prisma.sh`.
 
 All pushes and pull requests trigger GitHub Actions defined in
 `.github/workflows/ci.yml`. The workflow installs dependencies,
+ensures `pnpm` 8 is available and verified,
 runs `pnpm lint`, `pnpm test` and `pnpm build`.
+
+A separate workflow `.github/workflows/test.yml` runs only the test suite.
 
 ## License
 
