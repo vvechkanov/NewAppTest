@@ -97,7 +97,7 @@ PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma 
 
 You may also need to configure `no_proxy` or a mirror for `binaries.prisma.sh`.
 
-If the `init.sh` script reports that it can't find a Prisma schema, make sure you run it from the repository root. The script now specifies `--schema ../../prisma/schema.prisma` when calling Prisma commands.
+If the `init.sh` script reports that it can't find a Prisma schema or environment variables, make sure you run it from the repository root. The script now specifies `--schema ../../prisma/schema.prisma --dotenv ../../.env` when calling Prisma commands.
 
 ## CI
 
