@@ -30,7 +30,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.serializeUser((user: any, done) => done(null, user.id));
+passport.serializeUser((user: User, done) => done(null, user.id));
 passport.deserializeUser(async (id: string, done) => {
   const user = await prisma.user.findUnique({ where: { id } });
   done(null, user);
@@ -53,7 +53,7 @@ passport.use(
           discordId: profile.id,
           name: profile.username,
           avatarUrl,
-          email: (profile as any).email as string | undefined,
+          email: profile.email as string | undefined,
         };
         let user = await prisma.user.findUnique({ where: { discordId: data.discordId } });
         if (!user) {
