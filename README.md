@@ -98,6 +98,8 @@ All pushes and pull requests trigger GitHub Actions defined in
 `.github/workflows/ci.yml`. The workflow installs dependencies,
 runs `pnpm lint`, `pnpm test` and `pnpm build`.
 
+A separate workflow `.github/workflows/test.yml` runs only the test suite.
+
 ## License
 
 
