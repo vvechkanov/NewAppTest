@@ -17,6 +17,10 @@ jobs:
       - uses: pnpm/action-setup@v3
         with:
           version: 8
+      - run: npm install -g pnpm@8
+        name: Install pnpm manually
+      - run: pnpm --version
+        name: Verify pnpm installation
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm test
