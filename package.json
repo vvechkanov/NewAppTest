@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
-    "start": "turbo run start",
+    "start": "turbo run start --parallel",
     "postinstall": "sh -c 'PRISMA_ENGINES_CHECKSUM_IGNORE_MISSING=1 pnpm --filter @new-app/api exec prisma generate --skip-download || true'",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "vitest run"
