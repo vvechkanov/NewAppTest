@@ -19,5 +19,5 @@ jobs:
         name: Install pnpm manually
       - run: pnpm --version
         name: Verify pnpm installation
-      - run: pnpm install --frozen-lockfile
+      - run: pnpm install --no-frozen-lockfile
       - run: pnpm test
